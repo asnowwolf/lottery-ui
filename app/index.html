@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" ng-app="jsjLotteryApp">
+  <head>
+    <meta charset="utf-8">
+    <title>金数据抽奖系统</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp,app}) styles/vendor.css -->
+    <link rel="stylesheet" href="styles/vendor.css">
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">您的浏览器太老了，请到<a href="http://browsehappy.com/">下载一个新版浏览器</a>。</p>
+    <![endif]-->
+
+    <div ui-view></div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config/config.js"></script>
+
+    <script src="scripts/controllers/home/main.js"></script>
+    <script src="scripts/controllers/home/about.js"></script>
+    <script src="scripts/controllers/survey/list.js"></script>
+    <script src="scripts/controllers/lottery/list.js"></script>
+    <script src="scripts/controllers/lottery/show.js"></script>
+    <script src="scripts/controllers/lottery/play.js"></script>
+    <script src="scripts/controllers/survey/show.js"></script>
+
+    <script src="scripts/services/dao/dao-utils.js"></script>
+    <script src="scripts/services/dao/lottery.js"></script>
+    <script src="scripts/services/dao/survey.js"></script>
+    <script src="scripts/services/auth/auth-handler.js"></script>
+    <script src="scripts/services/auth/auth.js"></script>
+
+    <script src="scripts/directives/common/tw-dual-edit.js"></script>
+    <script src="scripts/directives/app/app-header.js"></script>
+    <script src="scripts/directives/app/app-footer.js"></script>
+
+    <script src="scripts/directives/common/ng-href-active.js"></script>
+    <script src="scripts/directives/common/if-in-roles.js"></script>
+    <script src="scripts/directives/common/if-is-admin.js"></script>
+    <script src="scripts/directives/common/if-is-guest.js"></script>
+    <script src="scripts/directives/common/if-is-user.js"></script>
+
+    <script src="scripts/filters/common/boolean.js"></script>
+    <script src="scripts/filters/common/blank.js"></script>
+    <script src="scripts/filters/app/lottery-status.js"></script>
+    <script src="scripts/filters/common/crud-list.js"></script>
+    <script src="scripts/services/dao/lottery-data.js"></script>
+    <script src="scripts/controllers/play/cover.js"></script>
+    <script src="scripts/controllers/play/import.js"></script>
+    <script src="scripts/controllers/play/main.js"></script>
+    <script src="scripts/controllers/play/ready.js"></script>
+    <script src="scripts/controllers/play/summary.js"></script>
+    <script src="scripts/services/dao/player-list.js"></script>
+    <!-- inject:views -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+  </body>
+</html>

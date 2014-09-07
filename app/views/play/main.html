@@ -1,0 +1,31 @@
+<div class="lottery-fullscreen step-main">
+  <div class="content">
+    <div class="logo">
+      <img src="images/logo.png"/>
+    </div>
+    <div class="name">
+      {{vm.lottery.name}}
+    </div>
+    <div class="current-award">
+      {{vm.award.name}} ( {{vm.awardIndex}} / {{vm.award.count}} )
+    </div>
+    <div class="rolling-lucky text-limited">
+      {{vm.current.name}}
+    </div>
+    <div class="toolbar">
+      <span ng-if="vm.awardIndex < vm.award.count">
+        <span ng-if="!vm.rolling" ng-click="vm.start()">按回车键继续抽奖</span>
+        <span ng-if="vm.rolling">
+          <span ng-if="vm.stopping">
+            正在停转，请稍候……
+          </span>
+          <span ng-if="!vm.stopping" ng-click="vm.stop()">
+            按回车键停转
+          </span>
+        </span>
+        <span ng-if="!vm.rolling" class="btn btn-default btn-cancel" ng-click="vm.giveUp()">弃权</span>
+      </span>
+      <a href="#!/play/{{vm.playId}}/summary/{{vm.awardId}}" ng-if="vm.awardIndex >= vm.award.count">查看中奖名单</a>
+    </div>
+  </div>
+</div>

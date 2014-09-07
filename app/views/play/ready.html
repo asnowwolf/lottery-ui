@@ -1,0 +1,16 @@
+<div class="lottery-fullscreen step-ready" hotkey="{enter: goToMain(vm.playId, vm.awardId)}">
+  <div class="content">
+    <div class="logo">
+      <img src="images/logo.png"/>
+    </div>
+    <div class="name">
+      {{vm.lottery.name}}
+    </div>
+    <div class="current-award">
+      {{vm.award.name}} {{vm.award.count}}名
+    </div>
+    <div class="toolbar">
+      <a href="#!/play/{{vm.playId}}/main/{{vm.awardId}}">按回车键开始抽奖</a>
+    </div>
+  </div>
+</div>

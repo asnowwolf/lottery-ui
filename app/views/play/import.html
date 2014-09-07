@@ -1,0 +1,32 @@
+<div class="lottery-fullscreen">
+  <div class="content">
+    <div class="logo">
+      <img src="images/logo.png"/>
+    </div>
+    <div class="name">
+      {{vm.lottery.name}}
+    </div>
+    <div class="input-group">
+      <label class="input-group-addon">名称</label>
+      <input type="text" class="form-control" ng-model="vm.lottery.name"/>
+    </div>
+    <div class="import-area row">
+      <div class="col-md-6">
+        <textarea class="form-control" placeholder="请从导出的excel中拷贝指定列，并粘贴到这里" ng-model="vm.text" ng-change="vm.importText(vm.text)"></textarea>
+      </div>
+      <div class="col-md-6 player-list">
+        <table class="player-preview table table-bordered table-hover">
+          <tbody>
+          <tr ng-repeat="player in vm.players">
+            <td>{{player.name}}</td>
+            <td>{{player.mobile}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="toolbar">
+      <a href="#!/play/{{vm.playId}}/cover">设置完毕，开始抽奖</a>
+    </div>
+  </div>
+</div>

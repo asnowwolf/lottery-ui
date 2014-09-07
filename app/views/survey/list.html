@@ -1,0 +1,26 @@
+<table class="table table-hover table-striped table-bordered">
+  <colgroup>
+    <col class=""/>
+    <col class="col-md-2"/>
+    <col class="col-md-1"/>
+    <col class="col-md-1"/>
+  </colgroup>
+  <thead>
+  <tr>
+    <th>名称</th>
+    <th>编号</th>
+    <th>答复数</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="survey in vm.survey.listByUser()">
+    <td>{{survey.name}}</td>
+    <td>{{survey.code}}</td>
+    <td>{{survey.answers.length}}</td>
+    <td>
+      <button type="button" class="btn btn-primary">抽奖情况</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

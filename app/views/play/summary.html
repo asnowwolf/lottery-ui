@@ -1,0 +1,24 @@
+<div class="lottery-fullscreen step-main">
+  <div class="content">
+    <div class="logo">
+      <img src="images/logo.png"/>
+    </div>
+    <div class="name">
+      {{vm.lottery.name}}
+    </div>
+    <div class="current-award">
+      {{vm.award.name}} ( 共 {{vm.award.count}} 位)
+    </div>
+    <div class="lucky-list">
+      <span class="inner-list">
+        <span ng-repeat="player in vm.luckyPlayers" class="inner-item">
+          <span class="name text-limited text-limited-sm" title="{{player.name}}-{{player.mobile}}">{{player.name}}</span><span class="mobile">{{player.mobile}}</span>
+        </span>
+      </span>
+    </div>
+    <div class="toolbar">
+      <a href="#!/play/{{vm.playId}}/main/{{vm.awardId + 1}}" ng-if="vm.awardId < vm.awardCount">按回车键继续抽下一级奖项</a>
+      <a href="#!/play/{{vm.playId}}/cover" ng-if="vm.awardId >= vm.awardCount">全部抽奖完毕，谢谢参加</a>
+    </div>
+  </div>
+</div>
