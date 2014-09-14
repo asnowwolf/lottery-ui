@@ -18,6 +18,10 @@ angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlaye
     });
   };
   vm.reset = function () {
+    if (!confirm("清空后将无法恢复，只能重新抽奖，确实要清空吗？")) {
+      return;
+    }
+
     _.each(daoPlayer.items, function (player) {
       if (player.awardId === vm.awardId) {
         player.awardId = undefined;

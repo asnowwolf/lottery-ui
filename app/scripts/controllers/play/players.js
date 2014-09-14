@@ -7,7 +7,7 @@
  * # ImportCtrl
  * Controller of the app
  */
-angular.module('app').controller('PlayImportCtrl', function (daoLottery, daoPlayer) {
+angular.module('app').controller('PlayPlayersCtrl', function (daoLottery, daoPlayer) {
   var vm = this;
   vm.lottery = daoLottery;
   vm.player = daoPlayer;

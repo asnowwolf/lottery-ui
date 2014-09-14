@@ -20,10 +20,10 @@ angular.module('app').config(function ($stateProvider, $locationProvider) {
     templateUrl: 'views/play/setting.html',
     controller: 'PlaySettingCtrl as vm'
   });
-  $stateProvider.state('play.import', {
-    url: '/import',
-    templateUrl: 'views/play/import.html',
-    controller: 'PlayImportCtrl as vm'
+  $stateProvider.state('play.players', {
+    url: '/players',
+    templateUrl: 'views/play/players.html',
+    controller: 'PlayPlayersCtrl as vm'
   });
   $stateProvider.state('play.main', {
     url: '/:awardId/main',
@@ -46,7 +46,7 @@ angular.module('app').config(function ($stateProvider, $locationProvider) {
     controller: 'PlaySummaryCtrl as vm'
   });
   $stateProvider.state('play.luckyList', {
-    url: '/:awardId/luckyList',
+    url: '/luckyList',
     templateUrl: 'views/play/luckyList.html',
     controller: 'PlayLuckyListCtrl as vm'
   });
