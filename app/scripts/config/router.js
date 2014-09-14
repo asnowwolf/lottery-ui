@@ -45,4 +45,9 @@ angular.module('app').config(function ($stateProvider, $locationProvider) {
     templateUrl: 'views/play/summary.html',
     controller: 'PlaySummaryCtrl as vm'
   });
+  $stateProvider.state('play.luckyList', {
+    url: '/:awardId/luckyList',
+    templateUrl: 'views/play/luckyList.html',
+    controller: 'PlayLuckyListCtrl as vm'
+  });
 });

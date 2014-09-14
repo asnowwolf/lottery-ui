@@ -114,6 +114,9 @@ input.editable {
     > div {
       text-align: center;
     }
+    table {
+      background: white;
+    }
     > .logo {
       padding-top: 50px;
       background: image-url('images/logo.png') no-repeat center bottom;
@@ -241,6 +244,13 @@ input.editable {
     }
     .player-preview tbody td {
       text-align: left;
+    }
+    .lucky-player-info {
+      text-align: left !important;
+      max-width: 800px;
+      .mobile {
+        color: gray;
+      }
     }
   }
   &.step-ready .current-award {

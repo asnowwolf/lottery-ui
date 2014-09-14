@@ -1,0 +1,35 @@
+<div class="lottery-fullscreen step-cover">
+  <div class="content">
+    <div class="logo">
+      <img src="images/logo.png"/>
+    </div>
+    <div class="name">
+      {{vm.lottery.name}}
+    </div>
+    <div class="description">
+      {{vm.lottery.description}}
+    </div>
+    <table class="award-list">
+      <colgroup>
+        <col style="width:158px" />
+      </colgroup>
+      <thead>
+      <tr>
+        <th>奖项</th>
+        <th>获奖者</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="award in vm.lottery.awards">
+        <td>{{award.name}}</td>
+        <td class="lucky-player-info">
+          <span ng-repeat="player in vm.getPlayersByAward(award)">
+            <span class="name text-limited text-limited-sm" title="{{player.name}}-{{player.mobile}}">{{player.name}}</span>
+            <span class="mobile text-limited text-limited-sm">({{player.mobile}})</span>
+          </span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -33,6 +33,7 @@
       </tbody>
     </table>
     <div class="alert">
+      <a ui-sref="play.luckyList()" class="btn btn-success"  ng-if="vm.allowReset()">查看中奖名单</a>
       <span class="btn btn-danger"  ng-if="vm.allowReset()" ng-click="vm.resetAll()">重置现有抽奖记录</span>
     </div>
   </div>
