@@ -25,7 +25,7 @@
         </span>
         <span ng-if="!vm.rolling" class="btn btn-default btn-cancel" ng-click="vm.giveUp()">弃权</span>
       </span>
-      <a href="#!/play/{{vm.playId}}/summary/{{vm.awardId}}" ng-if="vm.awardIndex >= vm.award.count">查看中奖名单</a>
+      <a ui-sref="play.summary({awardId: vm.award.id})" ng-if="vm.awardIndex >= vm.award.count">查看中奖名单</a>
     </div>
   </div>
 </div>

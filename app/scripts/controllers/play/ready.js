@@ -2,14 +2,27 @@
 
 /**
  * @ngdoc function
- * @name jsjLotteryApp.controller:PlayReadyCtrl
+ * @name app.controller:PlayReadyCtrl
  * @description
  * # PlayReadyCtrl
- * Controller of the jsjLotteryApp
+ * Controller of the app
  */
-angular.module('jsjLotteryApp').controller('PlayReadyCtrl', function (lotteryData, $routeParams) {
-  this.lottery = lotteryData;
-  this.playId = +$routeParams.play;
-  this.awardId = +$routeParams.award;
-  this.award = _.findWhere(lotteryData.awards, {id: this.awardId});
+angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlayer, $stateParams) {
+  var vm = this;
+  vm.lottery = daoLottery;
+  vm.awardId = +$stateParams.awardId;
+  vm.award = _.findWhere(daoLottery.awards, {id: this.awardId});
+  vm.hasHistory = function() {
+    return _.find(daoPlayer.items, function(player) {
+      return player.awardId || player.givenUp;
+    });
+  };
+  vm.reset = function () {
+    _.each(daoPlayer.items, function (player) {
+      if (player.awardId === vm.awardId) {
+        player.awardId = undefined;
+        player.givenUp = false;
+      }
+    });
+  }
 });

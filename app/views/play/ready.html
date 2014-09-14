@@ -10,7 +10,8 @@
       {{vm.award.name}} {{vm.award.count}}名
     </div>
     <div class="toolbar">
-      <a href="#!/play/{{vm.playId}}/main/{{vm.awardId}}">按回车键开始抽奖</a>
+      <a class="btn btn-danger" ng-click="vm.reset()" ng-if="vm.hasHistory()">重置本轮抽奖数据</a>
+      <a ui-sref="play.main({awardId: vm.award.id})">按回车键开始抽奖</a>
     </div>
   </div>
 </div>

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc filter
- * @name jsjLotteryApp.filter:blank
+ * @name app.filter:blank
  * @function
  * @description
  * # blank
- * Filter in the jsjLotteryApp.
+ * Filter in the app.
  */
-angular.module('jsjLotteryApp')
+angular.module('app')
   .filter('blank', function () {
     return function (input, defaultValue) {
       return input || defaultValue || '(无)'

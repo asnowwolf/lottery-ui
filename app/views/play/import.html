@@ -6,18 +6,24 @@
     <div class="name">
       {{vm.lottery.name}}
     </div>
-    <div class="input-group">
-      <label class="input-group-addon">名称</label>
-      <input type="text" class="form-control" ng-model="vm.lottery.name"/>
+    <div class="alert alert-info">
+      格式：第一列【姓名】，第二列【手机号】，用逗号或tab分隔<br/>
+      可以从金数据导出的excel中拷贝【姓名】和【手机号码】列，并粘贴到这里
     </div>
     <div class="import-area row">
       <div class="col-md-6">
-        <textarea class="form-control" placeholder="请从导出的excel中拷贝指定列，并粘贴到这里" ng-model="vm.text" ng-change="vm.importText(vm.text)"></textarea>
+        <textarea class="form-control" ng-model="vm.text" ng-change="vm.player.importText(vm.text)"></textarea>
       </div>
       <div class="col-md-6 player-list">
         <table class="player-preview table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th>姓名</th>
+            <th>手机号码</th>
+          </tr>
+          </thead>
           <tbody>
-          <tr ng-repeat="player in vm.players">
+          <tr ng-repeat="player in vm.player.items">
             <td>{{player.name}}</td>
             <td>{{player.mobile}}</td>
           </tr>
@@ -26,7 +32,7 @@
       </div>
     </div>
     <div class="toolbar">
-      <a href="#!/play/{{vm.playId}}/cover">设置完毕，开始抽奖</a>
+      <a ui-sref="play.overview()" ng-click="vm.lottery.save()" class="btn btn-primary">下一步：准备抽奖</a>
     </div>
   </div>
 </div>

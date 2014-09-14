@@ -71,6 +71,26 @@ body {
 $foreground-color: #1b1b1b;
 $foreground-color-primary: #f2933f;
 $foreground-color-minor: #dddddd;
+input.editable {
+  border: none;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px dashed lightgray;
+}
+
+.main-hint {
+  position: absolute;
+  width: 100%;
+  padding-top: 12px;
+  font-size: 18px;
+}
+
+.clickable {
+  cursor: pointer;
+  border-bottom: 1px dashed lightgray;
+  display: inline-block;
+  padding: 6px;
+}
 .lottery-fullscreen {
   font-family: "Microsoft YaHei", "Lantinghei SC", 'Open Sans Extrabold', "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: fixed;
@@ -79,7 +99,7 @@ $foreground-color-minor: #dddddd;
   width: 100%;
   height: 100%;
   text-align: center;
-  background: white image-url('background.png') no-repeat center bottom;
+  background: white image-url('images/background.png') no-repeat center bottom;
   .content {
     vertical-align: middle;
     display: inline-block;
@@ -96,7 +116,7 @@ $foreground-color-minor: #dddddd;
     }
     > .logo {
       padding-top: 50px;
-      background: image-url('logo.png') no-repeat center bottom;
+      background: image-url('images/logo.png') no-repeat center bottom;
       img {
         visibility: hidden;
       }

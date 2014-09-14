@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" ng-app="jsjLotteryApp">
+<html class="no-js" ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>金数据抽奖系统</title>
@@ -37,48 +37,27 @@
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/momentjs/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script src="bower_components/file-saver/FileSaver.js"></script>
+
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/config/config.js"></script>
+    <script src="scripts/config/router.js"></script>
+    <script src="scripts/config/startup.js"></script>
 
-    <script src="scripts/controllers/home/main.js"></script>
-    <script src="scripts/controllers/home/about.js"></script>
-    <script src="scripts/controllers/survey/list.js"></script>
-    <script src="scripts/controllers/lottery/list.js"></script>
-    <script src="scripts/controllers/lottery/show.js"></script>
-    <script src="scripts/controllers/lottery/play.js"></script>
-    <script src="scripts/controllers/survey/show.js"></script>
-
-    <script src="scripts/services/dao/dao-utils.js"></script>
-    <script src="scripts/services/dao/lottery.js"></script>
-    <script src="scripts/services/dao/survey.js"></script>
-    <script src="scripts/services/auth/auth-handler.js"></script>
-    <script src="scripts/services/auth/auth.js"></script>
-
-    <script src="scripts/directives/common/tw-dual-edit.js"></script>
-    <script src="scripts/directives/app/app-header.js"></script>
-    <script src="scripts/directives/app/app-footer.js"></script>
-
-    <script src="scripts/directives/common/ng-href-active.js"></script>
-    <script src="scripts/directives/common/if-in-roles.js"></script>
-    <script src="scripts/directives/common/if-is-admin.js"></script>
-    <script src="scripts/directives/common/if-is-guest.js"></script>
-    <script src="scripts/directives/common/if-is-user.js"></script>
-
-    <script src="scripts/filters/common/boolean.js"></script>
+    <script src="scripts/services/dao/DaoLottery.js"></script>
+    <script src="scripts/services/dao/DaoPlayer.js"></script>
     <script src="scripts/filters/common/blank.js"></script>
-    <script src="scripts/filters/app/lottery-status.js"></script>
-    <script src="scripts/filters/common/crud-list.js"></script>
-    <script src="scripts/services/dao/lottery-data.js"></script>
-    <script src="scripts/controllers/play/cover.js"></script>
+    <script src="scripts/filters/common/rightOf.js"></script>
+    <script src="scripts/controllers/play/setting.js"></script>
+    <script src="scripts/controllers/play/overview.js"></script>
     <script src="scripts/controllers/play/import.js"></script>
     <script src="scripts/controllers/play/main.js"></script>
     <script src="scripts/controllers/play/ready.js"></script>
     <script src="scripts/controllers/play/summary.js"></script>
-    <script src="scripts/services/dao/player-list.js"></script>
     <!-- inject:views -->
     <!-- endinject -->
     <!-- endbuild -->

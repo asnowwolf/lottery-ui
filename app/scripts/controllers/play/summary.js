@@ -2,19 +2,17 @@
 
 /**
  * @ngdoc function
- * @name jsjLotteryApp.controller:PlaySummaryCtrl
+ * @name app.controller:PlaySummaryCtrl
  * @description
  * # PlaySummaryCtrl
- * Controller of the jsjLotteryApp
+ * Controller of the app
  */
-angular.module('jsjLotteryApp').controller('PlaySummaryCtrl', function (lotteryData, $routeParams, players) {
+angular.module('app').controller('PlaySummaryCtrl', function (daoLottery, $stateParams, daoPlayer) {
   var vm = this;
-  vm.lottery = lotteryData;
-  vm.playId = +$routeParams.play;
-  vm.awardId = +$routeParams.award;
-  vm.award = _.findWhere(lotteryData.awards, {id: vm.awardId});
-  vm.awardCount = lotteryData.awards.length;
-  vm.luckyPlayers = _.filter(players, function(player) {
-    return !player.givenUp && player.award == vm.award;
+  vm.lottery = daoLottery;
+  vm.awardId = +$stateParams.awardId;
+  vm.awardCount = daoLottery.awards.length;
+  vm.luckyPlayers = _.filter(daoPlayer.items, function(player) {
+    return !player.givenUp && player.awardId === vm.awardId;
   });
 });

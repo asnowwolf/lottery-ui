@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc overview
- * @name jsjLotteryApp
+ * @name app
  * @description
- * # jsjLotteryApp
+ * # app
  *
  * Main module of the application.
  */
-angular.module('jsjLotteryApp', [
+angular.module('app', [
   'ngAnimate',
   'ngCookies',
   'restangular',
