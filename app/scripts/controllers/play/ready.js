@@ -14,7 +14,7 @@ angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlaye
   vm.award = _.findWhere(daoLottery.awards, {id: this.awardId});
   vm.hasHistory = function() {
     return _.find(daoPlayer.items, function(player) {
-      return player.awardId || player.givenUp;
+      return player.awardId === vm.awardId || player.givenUp;
     });
   };
   vm.reset = function () {
@@ -28,5 +28,6 @@ angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlaye
         player.givenUp = false;
       }
     });
+    daoPlayer.save();
   }
 });

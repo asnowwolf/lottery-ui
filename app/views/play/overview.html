@@ -23,7 +23,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="award in vm.lottery.awards | orderBy:'id'">
+      <tr ng-repeat="award in vm.lottery.awards | orderBy:'id':true">
         <td><a ui-sref="play.ready({awardId: award.id})">{{award.name}}</a></td>
         <td>{{award.count}}</td>
         <td>

@@ -14,6 +14,7 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
   vm.award = _.findWhere(daoLottery.awards, {id: vm.awardId});
   vm.awardIndex = 0;
   vm.index = 0;
+  // TODO: 抽取这部分逻辑到服务中
   // 唯一化
   vm.players = _.unique(daoPlayer.items, function(player) {
     return player.name + player.mobile;
