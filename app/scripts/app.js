@@ -9,10 +9,9 @@
  * Main module of the application.
  */
 angular.module('app', [
-  'ngAnimate',
   'ngCookies',
   'restangular',
-  'ui.router',
+  'ngRoute',
   'ngSanitize',
   'ngTouch'
 ]);

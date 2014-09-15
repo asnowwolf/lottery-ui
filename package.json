@@ -37,7 +37,8 @@
     "gulp-plumber": "^0.6.3",
     "protractor": "^1.0.0",
     "uglify-save-license": "^0.4.1",
-    "gulp-sass": "^0.7.3"
+    "gulp-sass": "^0.7.3",
+    "through2": "^0.4.2"
   },
   "engines": {
     "node": ">=0.10.0"

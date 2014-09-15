@@ -99,7 +99,7 @@ input.editable {
   width: 100%;
   height: 100%;
   text-align: center;
-  background: white image-url('images/background.png') no-repeat center bottom;
+  background: white url('../images/background.png') no-repeat center bottom;
   .content {
     vertical-align: middle;
     display: inline-block;
@@ -119,7 +119,7 @@ input.editable {
     }
     > .logo {
       padding-top: 50px;
-      background: image-url('images/logo.png') no-repeat center bottom;
+      background: url('../images/logo.png') no-repeat center bottom;
       img {
         visibility: hidden;
       }
@@ -307,7 +307,7 @@ input.editable {
   display: inline-block;
   width: 160px;
   height: 208px;
-  background: image-url("covers.png");
+  background: url("../images/covers.png");
   position: relative;
   .i-index {
     position: absolute;

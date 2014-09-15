@@ -8,14 +8,13 @@ angular.module('app').factory('daoLottery', function () {
   function DaoLottery() {
     this.name = '';
     this.description = '';
-    this.awards = [
-    ]
+    this.awards = [{id: 1}];
   }
 
   DaoLottery.prototype.clear = function () {
     this.name = '';
     this.description = '';
-    this.awards = [{}];
+    this.awards = [{id: 1}];
   };
   DaoLottery.prototype.load = function () {
     var data = localStorage.getItem('lottery');

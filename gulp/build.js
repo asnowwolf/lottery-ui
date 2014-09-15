@@ -1,6 +1,8 @@
 'use strict';
 
 var gulp = require('gulp');
+var fs = require('fs');
+var through = require('through2');
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license']
@@ -30,7 +32,7 @@ gulp.task('views', function () {
       quotes: true
     }))
     .pipe($.ngHtml2js({
-      moduleName: 'lotteryUi',
+      moduleName: 'app',
       prefix: 'views/'
     }))
     .pipe(gulp.dest('.tmp/views'))
@@ -49,18 +51,18 @@ gulp.task('html', ['styles', 'scripts', 'views'], function () {
       addPrefix: '../'
     }))
     .pipe($.useref.assets())
-    .pipe($.rev())
+//    .pipe($.rev())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
-    .pipe($.replace('bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap','fonts'))
+    .pipe($.replace('bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap', 'fonts'))
     .pipe($.csso())
     .pipe(cssFilter.restore())
     .pipe($.useref.restore())
     .pipe($.useref())
-    .pipe($.revReplace())
+//    .pipe($.revReplace())
     .pipe(gulp.dest('dist'))
     .pipe($.size());
 });
@@ -89,3 +91,20 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', ['html', 'views', 'images', 'fonts']);
+
+gulp.task('offline', ['build'], function () {
+  var lines = [
+    'CACHE MANIFEST',
+    'NETWORK:',
+    '*',
+    'CACHE:'
+  ];
+  return gulp.src('dist/**/*.*')
+    .pipe(through.obj(function (file, charset, cb) {
+      var fileName = file.path.replace(process.cwd() + '/dist/', '');
+      if (fileName !== 'manifest.appcache')
+        lines.push(fileName);
+      fs.writeFileSync('dist/manifest.appcache', lines.join('\n'), 'utf-8');
+      cb();
+    }));
+});

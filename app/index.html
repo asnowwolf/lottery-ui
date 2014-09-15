@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" ng-app="app">
+<html class="no-js" ng-app="app" manifest="manifest.appcache">
   <head>
     <meta charset="utf-8">
     <title>金数据抽奖系统</title>
@@ -24,7 +24,7 @@
       <p class="browsehappy">您的浏览器太老了，请到<a href="http://browsehappy.com/">下载一个新版浏览器</a>。</p>
     <![endif]-->
 
-    <div ui-view></div>
+    <div ng-view></div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -36,15 +36,19 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/file-saver/FileSaver.js"></script>
     <script src="bower_components/momentjs/moment.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script src="bower_components/file-saver/FileSaver.js"></script>
-
     <!-- build:js({app,.tmp}) scripts/main.js -->
+
     <script src="scripts/app.js"></script>
+
+    <!-- inject:views -->
+    <!-- endinject -->
+
     <script src="scripts/config/router.js"></script>
     <script src="scripts/config/startup.js"></script>
 
@@ -59,8 +63,6 @@
     <script src="scripts/controllers/play/ready.js"></script>
     <script src="scripts/controllers/play/summary.js"></script>
     <script src="scripts/controllers/play/luckyList.js"></script>
-    <!-- inject:views -->
-    <!-- endinject -->
     <!-- endbuild -->
 
   </body>

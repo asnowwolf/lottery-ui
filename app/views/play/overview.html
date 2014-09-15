@@ -24,7 +24,7 @@
       </thead>
       <tbody>
       <tr ng-repeat="award in vm.lottery.awards | orderBy:'id':true">
-        <td><a ui-sref="play.ready({awardId: award.id})">{{award.name}}</a></td>
+        <td><a ng-href="#!/award/{{award.id}}/ready">{{award.name}}</a></td>
         <td>{{award.count}}</td>
         <td>
           <span ng-repeat="item in award.items">{{item}}</span>
@@ -33,8 +33,8 @@
       </tbody>
     </table>
     <div class="alert">
-      <a ui-sref="play.luckyList()" class="btn btn-success"  ng-if="vm.allowReset()">查看中奖名单</a>
       <span class="btn btn-danger"  ng-if="vm.allowReset()" ng-click="vm.resetAll()">清空中奖记录</span>
+      <a ng-href="#!/luckyList" class="btn btn-success"  ng-if="vm.allowReset()">查看中奖名单</a>
     </div>
   </div>
 </div>

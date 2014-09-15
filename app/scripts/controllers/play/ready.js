@@ -7,10 +7,10 @@
  * # PlayReadyCtrl
  * Controller of the app
  */
-angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlayer, $stateParams) {
+angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlayer, $routeParams) {
   var vm = this;
   vm.lottery = daoLottery;
-  vm.awardId = +$stateParams.awardId;
+  vm.awardId = +$routeParams.awardId;
   vm.award = _.findWhere(daoLottery.awards, {id: this.awardId});
   vm.hasHistory = function() {
     return _.find(daoPlayer.items, function(player) {

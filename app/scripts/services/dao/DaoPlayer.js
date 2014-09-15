@@ -35,6 +35,9 @@ angular.module('app').factory('daoPlayer', function(rightOfFilter) {
       }
     });
   };
+  DaoPlayer.prototype.clear = function() {
+    this.items = [];
+  };
   DaoPlayer.prototype.load = function() {
     this.items = angular.fromJson(localStorage.getItem('players'));
   };

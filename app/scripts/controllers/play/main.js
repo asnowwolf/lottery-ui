@@ -7,10 +7,10 @@
  * # PlayMainCtrl
  * Controller of the app
  */
-angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, daoPlayer, $stateParams, $timeout) {
+angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, daoPlayer, $routeParams, $timeout) {
   var vm = this;
   vm.lottery = daoLottery;
-  vm.awardId = +$stateParams.awardId;
+  vm.awardId = +$routeParams.awardId;
   vm.award = _.findWhere(daoLottery.awards, {id: vm.awardId});
   vm.awardIndex = 0;
   vm.index = 0;
