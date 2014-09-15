@@ -42,8 +42,9 @@ angular.module('app').factory('daoLottery', function () {
   DaoLottery.prototype.removeAward = function (award) {
     this.awards.splice(this.awards.indexOf(award));
   };
-  DaoLottery.prototype.importJson = function() {
-
+  DaoLottery.prototype.importJson = function(text) {
+    var data = angular.fromJson(text);
+    _.extend(this, data);
   };
   DaoLottery.prototype.exportJson = function() {
     var blob = new Blob([angular.toJson(this)], {type: "application/json;charset=utf-8"});
