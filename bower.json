@@ -10,9 +10,9 @@
     "angular-sanitize": "1.3.x",
     "restangular": "1.3.x",
     "bootstrap-sass-official": "3.2.x",
-    "file-saver": "*",
     "momentjs": "~2.8.3",
-    "angular-route": "~1.2.16"
+    "angular-route": "~1.2.16",
+    "save-as": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.3.x"
