@@ -40,7 +40,7 @@ angular.module('app').factory('daoLottery', function () {
     var award = _.where(this.awards, {id: awardId});
   };
   DaoLottery.prototype.removeAward = function (award) {
-    this.awards.splice(this.awards.indexOf(award));
+    this.awards.splice(this.awards.indexOf(award), 1);
   };
   DaoLottery.prototype.importJson = function(text) {
     var data = angular.fromJson(text);
