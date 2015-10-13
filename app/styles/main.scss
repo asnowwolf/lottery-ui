@@ -101,6 +101,7 @@ input.editable {
   text-align: center;
   background: white url('../images/background.png') no-repeat center bottom;
   .content {
+    margin-top: 45px;
     vertical-align: middle;
     display: inline-block;
     width: 800px;
@@ -118,8 +119,15 @@ input.editable {
       background: white;
     }
     > .logo {
-      padding-top: 50px;
-      background: url('../images/logo.png') no-repeat center bottom;
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      width: 200px;
+      padding-bottom: 2.5%;
+      background-image: url("../images/logo.png");
+      background-repeat:no-repeat;
+      background-size:contain;
+      background-position:center;
       img {
         visibility: hidden;
       }
