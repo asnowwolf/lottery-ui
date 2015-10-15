@@ -11,8 +11,9 @@ angular.module('app').factory('daoPlayer', function(rightOfFilter) {
       // 转换成数字id，方便排序
       player.id = +player.id;
     }
-    if (!_.findWhere(this.items, {name: player.name, mobile: player.mobile}))
+    if (!_.findWhere(this.items, {name: player.name, mobile: player.mobile})) {
       this.items.push(player);
+    }
   };
   DaoPlayer.prototype.remove = function(player) {
     var index = this.items.indexOf(player);

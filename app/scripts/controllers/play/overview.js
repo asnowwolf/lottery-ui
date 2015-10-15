@@ -13,11 +13,11 @@ angular.module('app')
     vm.lottery = daoLottery;
     vm.allowReset = function() {
       return _.find(daoPlayer.items, function(player) {
-        return player.awardId || player.givenUp
+        return player.awardId || player.givenUp;
       });
     };
     vm.resetAll = function() {
-      if (!confirm("清空后将无法恢复，只能重新抽奖，您确实要清空吗？")) {
+      if (!confirm('清空后将无法恢复，只能重新抽奖，您确实要清空吗？')) {
         return;
       }
       _.each(daoPlayer.items, function(player) {

@@ -18,7 +18,7 @@ angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlaye
     });
   };
   vm.reset = function () {
-    if (!confirm("清空后将无法恢复，只能重新抽奖，确实要清空吗？")) {
+    if (!confirm('清空后将无法恢复，只能重新抽奖，确实要清空吗？')) {
       return;
     }
 
@@ -29,5 +29,5 @@ angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlaye
       }
     });
     daoPlayer.save();
-  }
+  };
 });

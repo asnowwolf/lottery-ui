@@ -5,6 +5,6 @@ angular.module('app').controller('PlayLuckyListCtrl', function PlayLuckyListCtrl
   vm.lottery = daoLottery;
   var players = _.reject(daoPlayer.items, {givenUp: true});
   vm.getPlayersByAward = function(award) {
-    return _.where(players, {awardId: award.id})
+    return _.where(players, {awardId: award.id});
   };
 });

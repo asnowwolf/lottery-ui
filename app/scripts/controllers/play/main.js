@@ -21,7 +21,7 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
   });
   // 清除本级中奖信息
   _.each(vm.players, function(player) {
-    if (player.awardId == vm.awardId) {
+    if (player.awardId === vm.awardId) {
       player.awardId = undefined;
     }
   });
@@ -37,10 +37,12 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
   };
   var next = function() {
     ++vm.index;
-    if (vm.index >= vm.players.length)
+    if (vm.index >= vm.players.length) {
       vm.index = 0;
-    if (!vm.rolling)
+    }
+    if (!vm.rolling) {
       return;
+    }
     vm.current = vm.players[vm.index];
   };
   vm.rolling = false;
@@ -53,8 +55,9 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
       $scope.$apply(function() {
         next();
       });
-      if (vm.rolling)
+      if (vm.rolling) {
         vm.start();
+      }
     }, 50);
   };
   vm.stopping = false;
