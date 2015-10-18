@@ -14,12 +14,12 @@
     </div>
     <div class="toolbar">
       <span ng-if="vm.numOfClaimedAwards < vm.award.count">
-        <span ng-if="!vm.rolling" ng-click="vm.start()">按回车键继续抽奖</span>
+        <span class="enter_triggered" ng-if="!vm.rolling" ng-click="vm.start()">按回车键继续抽奖</span>
         <span ng-if="vm.rolling">
           <span ng-if="vm.stopping">
             正在停转，请稍候……
           </span>
-          <span ng-if="!vm.stopping" ng-click="vm.stop()">
+          <span class="enter_triggered" ng-if="!vm.stopping" ng-click="vm.stop()">
             按回车键停转
           </span>
         </span>
