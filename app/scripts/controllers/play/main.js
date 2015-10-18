@@ -7,7 +7,7 @@
  * # PlayMainCtrl
  * Controller of the app
  */
-angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, daoPlayer, $routeParams, $timeout) {
+angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, daoPlayers, $routeParams, $timeout) {
   var vm = this;
   vm.lottery = daoLottery;
   vm.awardId = +$routeParams.awardId;
@@ -16,7 +16,7 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
   vm.index = 0;
   // TODO: 抽取这部分逻辑到服务中
   // 唯一化
-  vm.players = _.unique(daoPlayer.items, function(player) {
+  vm.players = _.unique(daoPlayers.allPlayers, function(player) {
     return player.name + player.mobile;
   });
   // 清除本级中奖信息

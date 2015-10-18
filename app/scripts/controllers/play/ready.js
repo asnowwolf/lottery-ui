@@ -7,13 +7,13 @@
  * # PlayReadyCtrl
  * Controller of the app
  */
-angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlayer, $routeParams) {
+angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlayers, $routeParams) {
   var vm = this;
   vm.lottery = daoLottery;
   vm.awardId = +$routeParams.awardId;
   vm.award = _.findWhere(daoLottery.awards, {id: this.awardId});
   vm.hasHistory = function() {
-    return _.find(daoPlayer.items, function(player) {
+    return _.find(daoPlayers.allPlayers, function(player) {
       return player.awardId === vm.awardId || player.givenUp;
     });
   };
@@ -22,12 +22,12 @@ angular.module('app').controller('PlayReadyCtrl', function (daoLottery, daoPlaye
       return;
     }
 
-    _.each(daoPlayer.items, function (player) {
+    _.each(daoPlayers.allPlayers, function (player) {
       if (player.awardId === vm.awardId) {
         player.awardId = undefined;
         player.givenUp = false;
       }
     });
-    daoPlayer.save();
+    daoPlayers.save();
   };
 });
