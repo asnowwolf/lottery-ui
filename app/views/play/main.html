@@ -7,13 +7,13 @@
       {{vm.lottery.name}}
     </div>
     <div class="current-award">
-      {{vm.award.name}} ( {{vm.awardIndex}} / {{vm.award.count}} )
+      {{vm.award.name}} ( {{vm.numOfClaimedAwards}} / {{vm.award.count}} )
     </div>
     <div class="rolling-lucky text-limited">
-      {{vm.current.name}}
+      {{vm.currentPlayer.name}}
     </div>
     <div class="toolbar">
-      <span ng-if="vm.awardIndex < vm.award.count">
+      <span ng-if="vm.numOfClaimedAwards < vm.award.count">
         <span ng-if="!vm.rolling" ng-click="vm.start()">按回车键继续抽奖</span>
         <span ng-if="vm.rolling">
           <span ng-if="vm.stopping">
@@ -25,7 +25,7 @@
         </span>
         <span ng-if="!vm.rolling" class="btn btn-default btn-cancel" ng-click="vm.giveUp()">弃权</span>
       </span>
-      <a ng-href="#!/award/{{vm.award.id}}/summary" ng-if="vm.awardIndex >= vm.award.count">查看中奖名单</a>
+      <a ng-href="#!/award/{{vm.award.id}}/summary" ng-if="vm.numOfClaimedAwards >= vm.award.count">查看中奖名单</a>
     </div>
   </div>
 </div>

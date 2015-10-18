@@ -7,73 +7,75 @@
  * # PlayMainCtrl
  * Controller of the app
  */
-angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, daoPlayers, $routeParams, $timeout) {
+angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, daoPlayers, $routeParams, $timeout, $interval) {
   var vm = this;
   vm.lottery = daoLottery;
   vm.awardId = +$routeParams.awardId;
   vm.award = _.findWhere(daoLottery.awards, {id: vm.awardId});
-  vm.awardIndex = 0;
-  vm.index = 0;
-  // TODO: 抽取这部分逻辑到服务中
-  // 唯一化
+  vm.numOfClaimedAwards = 0;
+  vm.currentPlayerIdx = 0;
+
   vm.players = _.unique(daoPlayers.allPlayers, function(player) {
     return player.name + player.mobile;
   });
-  // 清除本级中奖信息
-  _.each(vm.players, function(player) {
-    if (player.awardId === vm.awardId) {
-      player.awardId = undefined;
-    }
-  });
-  // 随机洗牌
+
+  resetWinnerForCurrentAward(vm.players, vm.awardId);
+
   vm.players = _.shuffle(vm.players);
-  // 忽略弃权的或者已中奖的
-  vm.players = _.filter(vm.players, function(player) {
-    return !player.givenUp && !player.awardId;
-  });
-  vm.removePlayer = function(player) {
-    var index = vm.players.indexOf(player);
-    vm.players.splice(index, 1);
-  };
-  var next = function() {
-    ++vm.index;
-    if (vm.index >= vm.players.length) {
-      vm.index = 0;
-    }
-    if (!vm.rolling) {
-      return;
-    }
-    vm.current = vm.players[vm.index];
-  };
+
+
   vm.rolling = false;
   vm.start = function() {
+    vm.players = excludeGivenUpAndAlreadyWonPlayers(vm.players);
+
     vm.rolling = true;
-    vm.players = _.filter(vm.players, function(player) {
-      return !player.givenUp && !player.awardId;
-    });
-    setTimeout(function() {
-      $scope.$apply(function() {
-        next();
-      });
-      if (vm.rolling) {
-        vm.start();
-      }
+    $interval(function() {
+        if (!vm.rolling) {
+          return;
+        }
+        vm.currentPlayerIdx = getNextPlayerIdx(vm.currentPlayerIdx, vm.players.length);
+        vm.currentPlayer = vm.players[vm.currentPlayerIdx];
     }, 50);
   };
+
   vm.stopping = false;
   vm.stop = function() {
     vm.stopping = true;
     $timeout(function() {
       vm.rolling = false;
       vm.stopping = false;
-      vm.current.awardId = vm.awardId;
-      ++vm.awardIndex;
+      vm.currentPlayer.awardId = vm.awardId;
+      ++vm.numOfClaimedAwards;
     }, 1000);
   };
+
   vm.giveUp = function() {
-    vm.current.givenUp = true;
+    vm.currentPlayer.givenUp = true;
+    --vm.numOfClaimedAwards;
     vm.start();
   };
 
   vm.start();
+
+  function resetWinnerForCurrentAward(players, awardId) {
+    _.each(players, function(player) {
+      if (player.awardId === awardId) {
+        player.awardId = undefined;
+      }
+    });
+  }
+
+  function getNextPlayerIdx(currentPlayerIdx, totalNumOfPlayers) {
+    var nextPlayerIdx = currentPlayerIdx + 1;
+    if (nextPlayerIdx >= totalNumOfPlayers) {
+      nextPlayerIdx = 0;
+    }
+    return nextPlayerIdx;
+  }
+
+  function excludeGivenUpAndAlreadyWonPlayers (players) {
+     return _.filter(players, function(player) {
+      return !player.givenUp && !player.awardId;
+    });
+  }
 });
