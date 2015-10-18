@@ -27,17 +27,10 @@ angular.module('app').factory('daoLottery', function () {
     var data = angular.toJson(this);
     localStorage.setItem('lottery', data);
   };
-  DaoLottery.prototype.addAward = function (award) {
-    award = award || {};
-    if (!award.id) {
-      award.id = this.awards.length + 1;
-    } else {
-      award.id = +awardId;
-    }
+  DaoLottery.prototype.addAward = function () {
+    var award = {};
+    award.id = this.awards.length + 1;
     this.awards.push(new Award(award));
-  };
-  DaoLottery.prototype.findAward = function (awardId) {
-    var award = _.where(this.awards, {id: awardId});
   };
   DaoLottery.prototype.removeAward = function (award) {
     this.awards.splice(this.awards.indexOf(award), 1);

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 (function($){
   $(document).keypress(function(e) {
