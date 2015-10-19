@@ -23,9 +23,9 @@
             按回车键停转
           </span>
         </span>
-        <span ng-if="!vm.rolling" class="btn btn-default btn-cancel" ng-click="vm.giveUp()">弃权</span>
       </span>
       <a ng-href="#!/award/{{vm.award.id}}/summary" ng-if="vm.numOfClaimedAwards >= vm.award.count">查看中奖名单</a>
+      <span ng-if="!vm.rolling" class="btn btn-default btn-cancel" ng-click="vm.giveUp()">弃权</span>
     </div>
   </div>
 </div>
