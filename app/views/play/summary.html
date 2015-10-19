@@ -17,7 +17,7 @@
       </span>
     </div>
     <div class="toolbar">
-      <a ng-href="#!/award/{{vm.awardId + 1}}/main" ng-if="vm.awardId < vm.awardCount">按回车键继续抽下一级奖项</a>
+      <a class="enter_triggered" ng-href="#!/award/{{vm.awardId + 1}}/main" ng-if="vm.awardId < vm.awardCount">按回车键继续抽下一级奖项</a>
       <a ng-href="#!/overview" ng-if="vm.awardId >= vm.awardCount">全部抽奖完毕，谢谢参加</a>
     </div>
   </div>
