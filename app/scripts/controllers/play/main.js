@@ -46,7 +46,7 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
       vm.stopping = false;
       vm.currentPlayer.awardId = vm.awardId;
       ++vm.numOfClaimedAwards;
-    }, 1000);
+    }, 618);
   };
 
   vm.giveUp = function() {
