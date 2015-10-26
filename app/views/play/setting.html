@@ -31,7 +31,7 @@
       <tbody>
       <tr ng-repeat="award in vm.lottery.awards">
         <td>
-          <input type="text" class="editable" ng-model="award.id" placeholder="抽奖序号"/>
+          <a>{{award.id}}</a>
         </td>
         <td>
           <input type="text" class="editable" ng-model="award.name" placeholder="奖项名称"/>
@@ -44,13 +44,17 @@
         </td>
         <td>
           <div class="btn-group">
-            <span class="btn btn-link" ng-if="!$last" ng-click="vm.lottery.removeAward(award)">
+            <span class="btn btn-link" ng-click="vm.lottery.removeAward(award)">
               <i class="glyphicon glyphicon-minus"></i>
             </span>
-            <span class="btn btn-link" ng-if="$last" ng-click="vm.lottery.addAward()">
-              <i class="glyphicon glyphicon-plus"></i>
-            </span>
           </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5" style="padding: 0px 0px">
+          <span class="btn btn-link" ng-click="vm.lottery.addAward()">
+            <i class="glyphicon glyphicon-plus"></i>
+          </span>
         </td>
       </tr>
       </tbody>
@@ -62,7 +66,7 @@
         <input type="file" class="btn btn-primary absolute" tw-uploader="vm.lottery.importJson(text)" ng-model="vm.noop" value="导入Json" />
       </span>
       <span class="btn btn-primary" ng-click="vm.lottery.exportJson()">导出Json</span>
-      <a class="btn btn-success" ng-href="#!/players">下一步：导入抽奖名单</a>
+      <a class="btn btn-success" ng-click="vm.onContinue()" ng-href="#!/players">下一步：导入抽奖名单</a>
     </div>
   </div>
 </div>

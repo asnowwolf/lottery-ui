@@ -34,6 +34,9 @@ angular.module('app').factory('daoLottery', function () {
   };
   DaoLottery.prototype.removeAward = function (award) {
     this.awards.splice(this.awards.indexOf(award), 1);
+    _.each(this.awards, function(award, idx){
+      award.id = idx + 1;
+    });
   };
   DaoLottery.prototype.importJson = function(text) {
     var data = angular.fromJson(text);
