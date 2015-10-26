@@ -91,6 +91,23 @@ input.editable {
   display: inline-block;
   padding: 6px;
 }
+
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 250px;
+  z-index: 999;
+
+  .logo-content {
+    padding-bottom: 16%;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
 .lottery-fullscreen {
   font-family: "Microsoft YaHei", "Lantinghei SC", 'Open Sans Extrabold', "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: fixed;
@@ -117,20 +134,6 @@ input.editable {
     }
     table {
       background: white;
-    }
-    > .logo {
-      position: absolute;
-      top: 5px;
-      left: 10px;
-      width: 200px;
-      padding-bottom: 2.5%;
-      background-image: url("../images/logo.png");
-      background-repeat:no-repeat;
-      background-size:contain;
-      background-position:center;
-      img {
-        visibility: hidden;
-      }
     }
     > .name {
       text-transform: uppercase;
