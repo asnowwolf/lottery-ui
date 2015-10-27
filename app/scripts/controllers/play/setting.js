@@ -4,10 +4,8 @@ angular.module('app').controller('PlaySettingCtrl', function SettingCtrl(daoLott
   vm.lottery = daoLottery;
 
   vm.onContinue = function() {
-    _.each(daoLottery.awards, function(award){
-      if(!award.name || !award.count || !award.item) {
-        daoLottery.removeAward(award);
-      }
+    daoLottery.awards = _.filter(daoLottery.awards, function(award){
+      return !!award.name || !!award.count || !!award.item;
     });
   };
 });
