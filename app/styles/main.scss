@@ -96,7 +96,7 @@ input.editable {
   position: absolute;
   top: 15px;
   left: 20px;
-  width: 250px;
+  width: 200px;
   z-index: 999;
 
   .logo-content {
@@ -121,7 +121,7 @@ input.editable {
     margin-top: 45px;
     vertical-align: middle;
     display: inline-block;
-    width: 800px;
+    width: 750px;
     height: 730px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -131,6 +131,7 @@ input.editable {
     cursor: default;
     > div {
       text-align: center;
+      margin-top: 10px;
     }
     table {
       background: white;
@@ -139,7 +140,8 @@ input.editable {
       text-transform: uppercase;
       font-size: 45px;
       padding: 26px 52px;
-      margin: 32px;
+      margin-top: 25px;
+      margin-bottom: 8px;
       border-top: 3px solid $foreground-color;
       border-bottom: 3px solid $foreground-color;
       display: inline-block;
@@ -150,15 +152,15 @@ input.editable {
       padding: 15px;
     }
     > .award-list {
-      margin-top: 20px;
+      margin-top: 9px;
       display: inline-block;
       border: 2px solid $foreground-color-primary;
       border-radius: 35px;
-      font-size: 25px;
+      font-size: 22px;
       color: $foreground-color-primary;
       td, th {
         text-align: center;
-        padding: 10px 20px;
+        padding: 5px 10px;
         a {
           color: $foreground-color-primary;
           &:hover {
@@ -175,7 +177,7 @@ input.editable {
     }
     > .current-award {
       font-size: 33px;
-      margin: 25px 0;
+      margin: 30px 0;
     }
 
     > .toolbar {
@@ -195,7 +197,7 @@ input.editable {
       }
     }
     > .rolling-lucky {
-      margin: 29px 0 62px;
+      margin: 10px 0 50px;
       padding: 0 52px;
       font-size: 45px;
       font-weight: bold;
@@ -203,9 +205,9 @@ input.editable {
       background: #ef933e;
       display: inline-block;
       border-radius: 35px;
-      line-height: 138px;
+      line-height: 70px;
       vertical-align: middle;
-      width: 625px;
+      width: 550px;
       overflow-y: -webkit-marquee;
     }
     > .lucky-list {
@@ -249,9 +251,12 @@ input.editable {
       margin-bottom: 32px;
     }
     .player-list {
+      padding: 0 0;
       font-size: 14px;
-      max-height: 300px;
+      max-height: 265px;
+      max-width: 375px;
       overflow-y: auto;
+      border: solid lightgray 1px;
     }
     .player-preview tbody td {
       text-align: left;
@@ -268,7 +273,7 @@ input.editable {
     margin-top: 130px;
   }
   &.step-main .current-award {
-    margin-top: 14px;
+    margin-top: 30px;
   }
 }
 
