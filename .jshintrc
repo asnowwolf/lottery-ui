@@ -24,7 +24,6 @@
     "_": false,
     "$": false,
     "confirm": false,
-    "moment": false,
-    "saveAs": false
+    "moment": false
   }
 }

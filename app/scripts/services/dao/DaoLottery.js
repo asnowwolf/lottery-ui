@@ -38,13 +38,5 @@ angular.module('app').factory('daoLottery', function () {
       award.id = idx + 1;
     });
   };
-  DaoLottery.prototype.importJson = function(text) {
-    var data = angular.fromJson(text);
-    _.extend(this, data);
-  };
-  DaoLottery.prototype.exportJson = function() {
-    var blob = new Blob([angular.toJson(this)], {type: 'application/json;charset=utf-8'});
-    saveAs(blob, 'lottery-' + moment().format('YYYYMMDD') + '.json');
-  };
   return new DaoLottery();
 });
