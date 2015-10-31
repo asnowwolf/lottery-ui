@@ -109,12 +109,16 @@ input.editable {
 }
 
 .setting-gear {
+  user-select: none;
+  cursor: pointer;
   position: absolute;
   z-index: 999;
-  top: 16px;
+  top: 8px;
   left: 96%;
   font-size: 30px;
-  color: dimgray;
+  i {
+    color: dimgray;
+  }
 }
 
 .lottery-fullscreen {
