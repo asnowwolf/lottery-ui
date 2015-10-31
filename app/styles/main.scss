@@ -108,6 +108,15 @@ input.editable {
   }
 }
 
+.setting-gear {
+  position: absolute;
+  z-index: 999;
+  top: 16px;
+  left: 96%;
+  font-size: 30px;
+  color: dimgray;
+}
+
 .lottery-fullscreen {
   font-family: "Microsoft YaHei", "Lantinghei SC", 'Open Sans Extrabold', "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: fixed;
