@@ -93,6 +93,9 @@ input.editable {
 }
 
 .logo {
+  user-select: none;
+  cursor: pointer;
+  display: block;
   position: absolute;
   top: 15px;
   left: 20px;
@@ -131,7 +134,7 @@ input.editable {
   text-align: center;
   background: white url('../images/background.png') no-repeat center bottom;
   .content {
-    margin-top: 45px;
+    margin-top: 50px;
     vertical-align: middle;
     display: inline-block;
     width: 750px;
@@ -261,7 +264,7 @@ input.editable {
     }
     > .import-area textarea {
       height: 265px;
-      margin-bottom: 32px;
+      margin-bottom: 10px;
     }
     .player-list {
       padding: 0 0;
