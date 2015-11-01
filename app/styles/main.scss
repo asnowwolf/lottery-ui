@@ -213,6 +213,7 @@ input.editable {
       }
     }
     > .rolling-lucky {
+      position: relative;
       margin-bottom: 15px;
       padding-top: 13px;
       font-size: 45px;
@@ -294,7 +295,12 @@ input.editable {
 }
 
 .btn.btn-cancel {
-  font-size: 18px;
+  position: absolute;
+  margin-top: 18px;
+  right: 30px;
+  padding-top: 2px;
+  padding-bottom: 0;
+  font-size: 17px;
   border: none;
   color: white;
   background: #ccc;
