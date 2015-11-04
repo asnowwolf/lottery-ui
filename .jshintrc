@@ -24,6 +24,7 @@
     "_": false,
     "$": false,
     "confirm": false,
-    "moment": false
+    "moment": false,
+    "bootbox": false
   }
 }
