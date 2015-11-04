@@ -1,5 +1,3 @@
-<a class="setting-gear" ng-click="vm.showDialog()"><i class="fa fa-cog"></i></a>
-
 <div class="lottery-fullscreen step-cover">
   <div class="content">
     <div class="name">
@@ -10,11 +8,12 @@
     </div>
     <table class="award-list">
       <colgroup>
-        <col style="width:100px"/>
-        <col style="width:158px"/>
-        <col style="width:165px"/>
-        <col style="width:302px"/>
-        <col style="width:100px"/>
+        <col style="width:80px"/>
+        <col style="width:128px"/>
+        <col style="width:95px"/>
+        <col style="width:232px"/>
+        <col style="width:130px"/>
+        <col style="width:70px"/>
       </colgroup>
       <thead>
       <tr>
@@ -22,6 +21,7 @@
         <th>奖项</th>
         <th>数量</th>
         <th>奖品</th>
+        <th>一次抽?人</th>
         <th>操作</th>
       </tr>
       </thead>
@@ -38,6 +38,9 @@
         </td>
         <td>
           <input type="text" class="editable inline" ng-model="award.item" placeholder="奖品"/>
+        </td>
+        <td>
+          <input type="text" class="editable inline" ng-model="award.concurrentHits" placeholder="人数"/>
         </td>
         <td>
           <div class="btn-group">

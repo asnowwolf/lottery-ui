@@ -9,7 +9,7 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
   vm.numOfClaimedAwards = 0;
   vm.currentPlayerIdx = 0;
 
-  var concurrentHits = localStorage.getItem('concurrentHits') || 1;
+  var concurrentHitNum = vm.award.concurrentHits || 1;
 
   vm.players = _.unique(daoPlayers.allPlayers, function(player) {
     return player.name + player.mobile;
@@ -32,8 +32,8 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
 
   function start() {
     vm.players = excludeGivenUpOrAlreadyWonPlayers(vm.players);
-    if(vm.award.count - vm.numOfClaimedAwards < concurrentHits) {
-      concurrentHits = vm.award.count - vm.numOfClaimedAwards;
+    if(vm.award.count - vm.numOfClaimedAwards < concurrentHitNum) {
+      concurrentHitNum = vm.award.count - vm.numOfClaimedAwards;
     }
 
     vm.rolling = true;
@@ -41,7 +41,7 @@ angular.module('app').controller('PlayMainCtrl', function ($scope, daoLottery, d
       if (!vm.rolling) {
         return;
       }
-      vm.currentPlayers = getRandomPlayers(vm.players, concurrentHits);
+      vm.currentPlayers = getRandomPlayers(vm.players, concurrentHitNum);
     }, 50);
   }
 
