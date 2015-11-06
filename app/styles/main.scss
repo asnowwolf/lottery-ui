@@ -211,6 +211,13 @@ input.editable {
           text-decoration: none;
         }
       }
+      .btn-select {
+        min-width: 170px;
+        color: white;
+      }
+    }
+    > .toolbar.import-page-nav {
+      margin-top: 0;
     }
     > .rolling-lucky {
       position: relative;
@@ -263,20 +270,38 @@ input.editable {
       padding-top: 12px;
       font-size: 40px;
     }
-    > .import-area textarea {
-      height: 265px;
-      margin-bottom: 10px;
-    }
-    .player-list {
-      padding: 0 0;
-      font-size: 14px;
-      max-height: 265px;
-      max-width: 375px;
-      overflow-y: auto;
-      border: solid lightgray 1px;
-    }
-    .player-preview tbody td {
-      text-align: left;
+    .import-section {
+      margin-top: 15px;
+
+      .alert {
+        margin-bottom: 5px;
+      }
+
+      > .import-area {
+        .golden-data-control {
+          margin-top: 2px;
+
+          input {
+            margin-bottom: 10px;
+          }
+        }
+
+        textarea {
+          height: 265px;
+          margin-bottom: 5px;
+        }
+      }
+      .player-list {
+        padding: 0 0;
+        font-size: 14px;
+        max-height: 265px;
+        max-width: 375px;
+        overflow-y: auto;
+        border: solid lightgray 1px;
+      }
+      .player-preview tbody td {
+        text-align: left;
+      }
     }
     .lucky-player-info {
       text-align: left !important;
