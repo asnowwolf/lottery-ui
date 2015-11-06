@@ -1,0 +1,12 @@
+<div class="lottery-fullscreen">
+  <div class="content">
+    <div class="name">
+      {{vm.lottery.name}}
+    </div>
+    <div ng-include="'views/data/players-fragment-manual-import.html'"></div>
+    <div class="toolbar">
+      <a ng-click="vm.clear()" class="btn btn-danger">清空名单</a>
+      <a ng-href="#!/overview" ng-click="vm.lottery.save()" class="btn btn-primary">下一步：准备抽奖</a>
+    </div>
+  </div>
+</div>
