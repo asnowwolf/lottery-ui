@@ -9,7 +9,7 @@
       <a class="btn btn-select btn-warning" ng-click="method = 1">手动导入</a>
     </div>
 
-    <div class="import-section" ng-if="method === 0" ng-include="'views/data/players-fragment-golden-data-import.html'"></div>
+    <div ng-controller="GoldenDataImportCtrl" class="import-section" ng-if="method === 0" ng-include="'views/data/players-fragment-golden-data-import.html'"></div>
     <div class="import-section" ng-if="method === 1" ng-include="'views/data/players-fragment-manual-import.html'"></div>
 
     <div class="import-page-nav toolbar">

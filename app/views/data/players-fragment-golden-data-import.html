@@ -4,10 +4,11 @@
 </div>
 <div class="import-area row">
   <div class="col-md-6">
-    <div class="golden-data-control">
-      <input class="form-control" placeholder="金数据表单ID">
-      <a class="btn btn-primary">连接并导入</a>
-    </div>
+    <form class="golden-data-control" name="goldenIdInput">
+      <input class="form-control" ng-required="true" ng-maxlength="6" ng-minlength="6" ng-pattern="/[a-zA-Z0-9]{6}/"
+             placeholder="金数据表单ID" ng-model="goldenIdInput.sheetId">
+      <a class="btn btn-primary" ng-disabled="goldenIdInput.$invalid">连接并导入</a>
+    </form>
   </div>
   <div ng-include="'views/data/players-fragment-preview.html'"></div>
 </div>
