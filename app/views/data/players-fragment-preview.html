@@ -1,0 +1,16 @@
+<div style="height: 249px" class="col-md-6 player-list">
+  <table class="player-preview table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>姓名</th>
+      <th>手机号码</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="player in vm.player.allPlayers">
+      <td>{{player.name}}</td>
+      <td>{{player.mobile}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

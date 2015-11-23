@@ -1,8 +1,5 @@
 <div class="lottery-fullscreen step-cover">
   <div class="content">
-    <div class="logo">
-      <img src="images/logo.png"/>
-    </div>
     <div class="name">
       {{vm.lottery.name}}
     </div>
@@ -27,7 +24,7 @@
         <td><a ng-href="#!/award/{{award.id}}/ready">{{award.name}}</a></td>
         <td>{{award.count}}</td>
         <td>
-          <span ng-repeat="item in award.items">{{item}}</span>
+          <span>{{award.item}}</span>
         </td>
       </tr>
       </tbody>

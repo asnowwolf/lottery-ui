@@ -1,8 +1,5 @@
 <div class="lottery-fullscreen step-cover">
   <div class="content">
-    <div class="logo">
-      <img src="images/logo.png"/>
-    </div>
     <div class="name">
       <input type="text" ng-model="vm.lottery.name" class="editable" placeholder="活动名称"/>
     </div>
@@ -11,11 +8,12 @@
     </div>
     <table class="award-list">
       <colgroup>
-        <col style="width:100px"/>
-        <col style="width:158px"/>
-        <col style="width:165px"/>
-        <col style="width:302px"/>
-        <col style="width:100px"/>
+        <col style="width:80px"/>
+        <col style="width:128px"/>
+        <col style="width:95px"/>
+        <col style="width:232px"/>
+        <col style="width:130px"/>
+        <col style="width:70px"/>
       </colgroup>
       <thead>
       <tr>
@@ -23,13 +21,14 @@
         <th>奖项</th>
         <th>数量</th>
         <th>奖品</th>
+        <th>一次抽?人</th>
         <th>操作</th>
       </tr>
       </thead>
       <tbody>
       <tr ng-repeat="award in vm.lottery.awards">
         <td>
-          <input type="text" class="editable" ng-model="award.id" placeholder="抽奖序号"/>
+          <a>{{award.id}}</a>
         </td>
         <td>
           <input type="text" class="editable" ng-model="award.name" placeholder="奖项名称"/>
@@ -38,29 +37,28 @@
           <input type="text" class="editable" ng-model="award.count" placeholder="数量"/>
         </td>
         <td>
-          <input type="text" class="editable inline" ng-model="award.items" placeholder="奖品"/>
+          <input type="text" class="editable inline" ng-model="award.item" placeholder="奖品"/>
+        </td>
+        <td>
+          <input type="text" class="editable inline" ng-model="award.concurrentHits" placeholder="人数"/>
         </td>
         <td>
           <div class="btn-group">
-            <span class="btn btn-link" ng-if="!$last" ng-click="vm.lottery.removeAward(award)">
+            <span class="btn btn-link" ng-click="vm.lottery.removeAward(award)">
               <i class="glyphicon glyphicon-minus"></i>
-            </span>
-            <span class="btn btn-link" ng-if="$last" ng-click="vm.lottery.addAward()">
-              <i class="glyphicon glyphicon-plus"></i>
             </span>
           </div>
         </td>
       </tr>
+      <tr>
+        <td style="padding: 0 0; font-size: 0" colspan="6">
+          <span class="btn btn-link" ng-click="vm.lottery.addAward()">
+            <i class="glyphicon glyphicon-plus"></i>
+          </span>
+        </td>
+      </tr>
       </tbody>
     </table>
-    <div class="alert">
-
-      <span class="btn btn-primary relative">
-        导入Json
-        <input type="file" class="btn btn-primary absolute" tw-uploader="vm.lottery.importJson(text)" ng-model="vm.noop" value="导入Json" />
-      </span>
-      <span class="btn btn-primary" ng-click="vm.lottery.exportJson()">导出Json</span>
-      <a class="btn btn-success" ng-href="#!/players">下一步：导入抽奖名单</a>
-    </div>
+    <a style="margin-top: 15px" class="btn btn-success" ng-click="vm.onContinue()" ng-href="#!/players">下一步：导入抽奖名单</a>
   </div>
 </div>

@@ -1,0 +1,14 @@
+<div class="alert alert-info">
+  请输入金数据表单ID号</br>
+  点击确定后程序将自动导入数据, 请确保此时网络连接可用!
+</div>
+<div class="import-area row">
+  <div class="col-md-6">
+    <form class="golden-data-control" name="goldenIdInput">
+      <input class="form-control" ng-required="true" ng-maxlength="6" ng-minlength="6" ng-pattern="/[a-zA-Z0-9]{6}/"
+             placeholder="金数据表单ID" ng-model="goldenIdInput.sheetId">
+      <a class="btn btn-primary" ng-disabled="goldenIdInput.$invalid">连接并导入</a>
+    </form>
+  </div>
+  <div ng-include="'views/data/players-fragment-preview.html'"></div>
+</div>

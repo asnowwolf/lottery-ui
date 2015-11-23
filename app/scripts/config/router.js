@@ -11,7 +11,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
     controller: 'PlaySettingCtrl as vm'
   });
   $routeProvider.when('/players', {
-    templateUrl: 'views/play/players.html',
+    templateUrl: 'views/data/players.html',
     controller: 'PlayPlayersCtrl as vm'
   });
   $routeProvider.when('/award/:awardId/main', {

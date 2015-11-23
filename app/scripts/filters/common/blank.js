@@ -11,6 +11,6 @@
 angular.module('app')
   .filter('blank', function () {
     return function (input, defaultValue) {
-      return input || defaultValue || '(无)'
+      return input || defaultValue || '(无)';
     };
   });

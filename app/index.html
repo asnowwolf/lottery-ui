@@ -2,10 +2,12 @@
 <html class="no-js" ng-app="app" manifest="manifest.appcache">
   <head>
     <meta charset="utf-8">
-    <title>金数据抽奖系统</title>
+    <title>抽奖系统</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- build:css({.tmp,app}) styles/vendor.css -->
     <link rel="stylesheet" href="styles/vendor.css">
@@ -24,10 +26,15 @@
       <p class="browsehappy">您的浏览器太老了，请到<a href="http://browsehappy.com/">下载一个新版浏览器</a>。</p>
     <![endif]-->
 
+
+    <a class="logo" ng-href="#!/setting">
+      <div class="logo-content">
+      </div>
+    </a>
+
     <div ng-view></div>
 
     <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -37,9 +44,9 @@
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/momentjs/moment.js"></script>
-    <script src="bower_components/save-as/FileSaver.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <!-- endbower -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootbox.js/bootbox.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
@@ -49,11 +56,13 @@
     <!-- inject:views -->
     <!-- endinject -->
 
+    <script src="scripts/jquery/enter_detection.js"></script>
+
     <script src="scripts/config/router.js"></script>
     <script src="scripts/config/startup.js"></script>
 
     <script src="scripts/services/dao/DaoLottery.js"></script>
-    <script src="scripts/services/dao/DaoPlayer.js"></script>
+    <script src="scripts/services/dao/DaoPlayers.js"></script>
     <script src="scripts/filters/common/blank.js"></script>
     <script src="scripts/filters/common/rightOf.js"></script>
     <script src="scripts/directives/common/twUploader.js"></script>
@@ -64,6 +73,7 @@
     <script src="scripts/controllers/play/ready.js"></script>
     <script src="scripts/controllers/play/summary.js"></script>
     <script src="scripts/controllers/play/luckyList.js"></script>
+    <script src="scripts/controllers/data/golden-data-import.js"></script>
     <!-- endbuild -->
 
   </body>

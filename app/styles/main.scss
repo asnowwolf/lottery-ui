@@ -91,6 +91,39 @@ input.editable {
   display: inline-block;
   padding: 6px;
 }
+
+.logo {
+  user-select: none;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 200px;
+  z-index: 999;
+
+  .logo-content {
+    padding-bottom: 16%;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.setting-gear {
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 999;
+  top: 8px;
+  left: 96%;
+  font-size: 30px;
+  i {
+    color: dimgray;
+  }
+}
+
 .lottery-fullscreen {
   font-family: "Microsoft YaHei", "Lantinghei SC", 'Open Sans Extrabold', "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: fixed;
@@ -101,9 +134,10 @@ input.editable {
   text-align: center;
   background: white url('../images/background.png') no-repeat center bottom;
   .content {
+    margin-top: 35px;
     vertical-align: middle;
     display: inline-block;
-    width: 800px;
+    width: 720px;
     height: 730px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -113,22 +147,18 @@ input.editable {
     cursor: default;
     > div {
       text-align: center;
+      margin-top: 10px;
     }
     table {
       background: white;
     }
-    > .logo {
-      padding-top: 50px;
-      background: url('../images/logo.png') no-repeat center bottom;
-      img {
-        visibility: hidden;
-      }
-    }
     > .name {
+      width: 90%;
       text-transform: uppercase;
-      font-size: 30px;
+      font-size: 45px;
       padding: 26px 52px;
-      margin: 32px;
+      margin-top: 25px;
+      margin-bottom: 5px;
       border-top: 3px solid $foreground-color;
       border-bottom: 3px solid $foreground-color;
       display: inline-block;
@@ -139,15 +169,15 @@ input.editable {
       padding: 15px;
     }
     > .award-list {
-      margin-top: 20px;
+      margin-top: 9px;
       display: inline-block;
       border: 2px solid $foreground-color-primary;
       border-radius: 35px;
-      font-size: 25px;
+      font-size: 22px;
       color: $foreground-color-primary;
       td, th {
         text-align: center;
-        padding: 10px 20px;
+        padding: 5px 10px;
         a {
           color: $foreground-color-primary;
           &:hover {
@@ -164,7 +194,7 @@ input.editable {
     }
     > .current-award {
       font-size: 33px;
-      margin: 25px 0;
+      margin: 30px 0;
     }
 
     > .toolbar {
@@ -182,19 +212,27 @@ input.editable {
           text-decoration: none;
         }
       }
+      .btn-select {
+        min-width: 170px;
+        color: white;
+      }
+    }
+    > .toolbar.import-page-nav {
+      margin-top: 9px;
     }
     > .rolling-lucky {
-      margin: 29px 0 62px;
-      padding: 0 52px;
+      position: relative;
+      margin-bottom: 15px;
+      padding-top: 13px;
       font-size: 45px;
       font-weight: bold;
       color: white;
       background: #ef933e;
       display: inline-block;
       border-radius: 35px;
-      line-height: 138px;
+      line-height: 65px;
       vertical-align: middle;
-      width: 625px;
+      width: 480px;
       overflow-y: -webkit-marquee;
     }
     > .lucky-list {
@@ -233,17 +271,38 @@ input.editable {
       padding-top: 12px;
       font-size: 40px;
     }
-    > .import-area textarea {
-      height: 265px;
-      margin-bottom: 32px;
-    }
-    .player-list {
-      font-size: 14px;
-      max-height: 300px;
-      overflow-y: auto;
-    }
-    .player-preview tbody td {
-      text-align: left;
+    .import-section {
+      margin-top: 15px;
+
+      .alert {
+        margin-bottom: 5px;
+      }
+
+      > .import-area {
+        .golden-data-control {
+          margin-top: 2px;
+
+          input {
+            margin-bottom: 10px;
+          }
+        }
+
+        textarea {
+          height: 265px;
+          margin-bottom: 5px;
+        }
+      }
+      .player-list {
+        padding: 0 0;
+        font-size: 14px;
+        max-height: 265px;
+        max-width: 375px;
+        overflow-y: auto;
+        border: solid lightgray 1px;
+      }
+      .player-preview tbody td {
+        text-align: left;
+      }
     }
     .lucky-player-info {
       text-align: left !important;
@@ -257,12 +316,17 @@ input.editable {
     margin-top: 130px;
   }
   &.step-main .current-award {
-    margin-top: 14px;
+    margin-top: 30px;
   }
 }
 
 .btn.btn-cancel {
-  font-size: 18px;
+  position: absolute;
+  margin-top: 18px;
+  right: 30px;
+  padding-top: 2px;
+  padding-bottom: 0;
+  font-size: 17px;
   border: none;
   color: white;
   background: #ccc;

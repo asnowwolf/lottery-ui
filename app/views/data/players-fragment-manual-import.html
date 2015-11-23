@@ -1,0 +1,10 @@
+<div class="alert alert-info">
+  格式：第一列【姓名】，第二列【手机号】，用逗号或tab分隔<br/>
+  可以从金数据导出的excel中拷贝【姓名】和【手机号码】列，并粘贴到这里
+</div>
+<div class="import-area row">
+  <div class="col-md-6">
+    <textarea style="height: 250px; resize: none" class="form-control" ng-model="vm.text" ng-change="vm.player.importText(vm.text)"></textarea>
+  </div>
+  <div ng-include="'views/data/players-fragment-preview.html'"></div>
+</div>
